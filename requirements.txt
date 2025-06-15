@@ -1,1 +1,2 @@
+click==8.2.1
 hijridate==2.5.0
