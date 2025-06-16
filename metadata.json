@@ -9,7 +9,8 @@
     {
       "name": "Hijri Date",
       "uuid": "hijri@mushi",
-      "description": "Show Hijri date in the panel."
+      "description": "Show Hijri date in the panel.",
+      "settings-schema": "settings-schema.json"
     }
   ]
 }

@@ -1,0 +1,37 @@
+{
+  "language": {
+    "type": "combobox",
+    "default": "en",
+    "description": "Language",
+    "options": {
+      "English": "en",
+      "Arabic": "ar"
+    }
+  },
+  "format": {
+    "type": "combobox",
+    "default": "DD-MM-YYYY",
+    "description": "Date format",
+    "options": {
+      "DD-MM-YYYY": "DD-MM-YYYY",
+      "YYYY-MM-DD": "YYYY-MM-DD",
+      "Month Day, Year": "Month Day, Year"
+    }
+  },
+  "monthNames": {
+    "type": "checkbox",
+    "default": true,
+    "description": "Use month name instead of number"
+  },
+  "separator": {
+    "type": "combobox",
+    "default": " ",
+    "description": "Date separator",
+    "options": {
+      "Space": " ",
+      "Dash": "-",
+      "Slash": "/",
+      "Dot": "."
+    }
+  }
+}
