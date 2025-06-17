@@ -1,6 +1,8 @@
 # Hijri Date Applet for Cinnamon
 
-A Cinnamon desktop panel applet that displays the current Hijri (Islamic) date using the [Aladhan API](https://aladhan.com/prayer-times-api). The date updates at a configurable interval and supports both Arabic and English display options.
+A Cinnamon desktop panel applet that displays the current Hijri (Islamic) date using
+the [Aladhan API](https://aladhan.com/prayer-times-api). The date updates at a configurable interval and supports both
+Arabic and English display options.
 
 ## Features
 
@@ -16,19 +18,7 @@ A Cinnamon desktop panel applet that displays the current Hijri (Islamic) date u
 
 ## Requirements
 
-* Cinnamon desktop environment
 * Internet connection (to fetch Hijri date from Aladhan API)
-
-## Installation
-
-1. Clone or download this repository into your Cinnamon applet directory:
-
-```bash
-~/.local/share/cinnamon/applets/hijri@mushi/
-```
-
-2. Make sure the `metadata.json` and `applet.js` are present in the directory.
-3. Right-click on the Cinnamon panel → **Add Applets to the Panel** → Add **Hijri Date Applet**.
 
 ## Settings
 
@@ -42,6 +32,15 @@ You can access settings via the applet's right-click menu.
 
 ## API Used
 
-[Aladhan.com - Hijri Date API](https://aladhan.com/gregorian-to-hijri)
+[Aladhan](https://aladhan.com/islamic-calendar-api#get-/gToH/-date-)
 
+## Feedback
 
+You can leave a comment on [cinnamon-spices.linuxmint.com](https://cinnamon-spices.linuxmint.com/) or create an issue on
+my [Hijri Applet](https://github.com/mubashirzamir/hijri-applet) development GitHub repository.
+
+This is where I develop new features and test ideas before submitting updates to the official Cinnamon Spices
+repository.
+
+If you find this applet useful, please let me know by liking it both on the Cinnamon Spices site and on GitHub. Your
+feedback and support help motivate continued development and improvements.
