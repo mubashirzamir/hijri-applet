@@ -1,9 +1,10 @@
 # TODO
 - [x] Explore options to simply hit curl and get date
-- [ ] Add support for urdu
-- [ ] Refactor to make it cleaner
-- [ ] Improve formatting options on the frontend
+- [x] Add support for urdu (Apparently urdu numerals do not have unicode characters?!)
+- [x] Refactor to make it cleaner
+- [x] Improve formatting options on the frontend
+- [x] Add README.md
+- [ ] Make icon
 - [ ] Add license
-- [ ] Add README.md
 - [ ] Publishing
 - [ ] Blogging
