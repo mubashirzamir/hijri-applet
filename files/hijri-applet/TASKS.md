@@ -4,6 +4,8 @@
 - [x] Refactor to make it cleaner
 - [x] Improve formatting options on the frontend
 - [x] Add README.md
+- [x] Following guidelines
+- [ ] Somehow rename to hijri@mushi
 - [ ] Make icon
 - [ ] Add license
 - [ ] Publishing
