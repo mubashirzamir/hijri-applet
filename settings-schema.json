@@ -18,11 +18,6 @@
       "Month Day, Year": "Month Day, Year"
     }
   },
-  "monthNames": {
-    "type": "checkbox",
-    "default": true,
-    "description": "Use month name instead of number"
-  },
   "separator": {
     "type": "combobox",
     "default": " ",
@@ -33,5 +28,18 @@
       "Slash": "/",
       "Dot": "."
     }
+  },
+  "showMonthName": {
+    "type": "checkbox",
+    "default": true,
+    "description": "Use month name instead of number"
+  },
+  "refreshInterval": {
+    "type": "spinbutton",
+    "default": 3600,
+    "description": "Refresh interval in seconds",
+    "min": 3600,
+    "max": 86400,
+    "step": 3600
   }
 }
