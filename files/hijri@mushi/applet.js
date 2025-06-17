@@ -34,6 +34,11 @@ class HijriApplet extends Applet.TextApplet {
         // Session for HTTP requests
         this.session = new Soup.Session();
 
+        // Variables to throttle manual refreshes
+        this.isUpdating = false;
+        this.lastClickTime = 0;
+        this.throttleInterval = 2000; // 2 seconds in ms
+
         // Setting defaults
         this.language = SETTINGS.language;
         this.format = SETTINGS.format;
@@ -42,10 +47,10 @@ class HijriApplet extends Applet.TextApplet {
         this.refreshInterval = SETTINGS.refreshInterval;
 
         this._initSettings(metadata, instanceId);
-        this.updateDate();
+        this._updateDate();
 
         this.timer = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, this.refreshInterval, () => {
-            this.updateDate();
+            this._updateDate();
             return true;
         });
     }
@@ -58,13 +63,19 @@ class HijriApplet extends Applet.TextApplet {
                 Settings.BindingDirection.IN,
                 setting,
                 setting,
-                this.updateDate.bind(this),
+                this._updateDate.bind(this),
                 null
             );
         }
     }
 
-    async updateDate() {
+    async _updateDate() {
+        if (this.isUpdating) {
+            return;
+        }
+
+        this.isUpdating = true;
+
         try {
             const url = this._buildURL();
             const request = this._buildRequest(url);
@@ -75,6 +86,8 @@ class HijriApplet extends Applet.TextApplet {
         } catch (e) {
             this._logError(e);
             this._setAppletLabel("Error");
+        } finally {
+            this.isUpdating = false;
         }
     }
 
@@ -182,6 +195,22 @@ class HijriApplet extends Applet.TextApplet {
 
     _logError(message) {
         global.logError(`hijri@mushi: ${message}`);
+    }
+
+    // Manual refresh
+    on_applet_clicked(event) {
+        const now = Date.now();
+
+        if (this.isUpdating) {
+            return;
+        }
+
+        if (now - this.lastClickTime < this.throttleInterval) {
+            return;
+        }
+
+        this.lastClickTime = now;
+        this._updateDate();
     }
 
     on_applet_removed_from_panel() {
